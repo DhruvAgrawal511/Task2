@@ -1,0 +1,56 @@
+==================================================
+Email Header Analyzer – Results (Simulated)
+==================================================
+
+Submitted Header Summary:
+-----------------------------
+From: security-update@appleid-confirm.com
+To: victim@example.com
+Subject: [Important] Your Apple ID Has Been Locked
+Return-Path: <phish@malicious-domain.com>
+Received: from smtp34.mailhost.cc (185.204.1.123) by mail.example.com
+Reply-To: verify@apple-security-notice.com
+Message-ID: <20250625182245.1234567890@appleid-confirm.com>
+Authentication-Results:
+  spf=softfail (appleid-confirm.com does not designate 185.204.1.123 as permitted sender)
+  dkim=none (no signature found)
+  dmarc=fail (policy=reject)
+
+--------------------------------------------------
+Analyzer Results
+--------------------------------------------------
+
+🔹 Return-Path Mismatch
+  - Claimed Sender: `security-update@appleid-confirm.com`
+  - Return-Path: `phish@malicious-domain.com`
+  - This mismatch indicates possible spoofing
+
+🔹 SPF (Sender Policy Framework): SoftFail
+  - IP 185.204.1.123 is not listed in the SPF record for `appleid-confirm.com`
+  - Email fails SPF authentication
+
+🔹 DKIM (DomainKeys Identified Mail): Not Found
+  - No DKIM signature detected in the headers
+
+🔹 DMARC (Domain-based Message Authentication): Fail
+  - Domain `appleid-confirm.com` has a reject policy
+  - This message did not pass SPF/DKIM alignment
+  - DMARC compliance failed
+
+🔹 Sending IP:
+  - IP: 185.204.1.123
+  - Host: smtp34.mailhost.cc
+  - Location: RU (Russia)
+  - Reputational Risk: Blacklisted in 3/85 databases (per MXToolbox)
+
+--------------------------------------------------
+Conclusion
+--------------------------------------------------
+
+The email header shows:
+- Spoofed identity via mismatched `From` and `Return-Path`
+- Failed SPF and DMARC authentication
+- Origin from a non-trusted IP
+- Highly suspicious sender infrastructure
+
+This email is **very likely a phishing attempt** and should not be trusted.
