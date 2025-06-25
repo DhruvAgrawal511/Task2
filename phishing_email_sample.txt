@@ -1,0 +1,16 @@
+From: security-update@appleid-confirm.com
+To: victim@example.com
+Subject: [Important] Your Apple ID Has Been Locked
+
+Dear Customer,
+
+We detected suspicious activity on your Apple ID. For your protection, your account has been locked.
+
+Please verify your identity immediately by clicking the link below:
+
+[Verify Now](http://appleid-lockverify.com/login)
+
+If you do not verify within 24 hours, your account will be permanently suspended.
+
+Thank you,  
+Apple Support
